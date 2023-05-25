@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/editUI.css' %}">
+        <link rel="stylesheet" href="{% static 'css/mater.css' %}">
+        <link rel="stylesheet" href="">
+<!--{#        <script defer src="../static/js/main.js"></script>#}-->
+        <script defer src="{% static 'js/editJS.js' %}"></script>
+    </head>
+    <header>
+        <div id="header">
+            {% include 'header.html' %}
+        </div>
+    </header>
+    <body>
+        <div class = "content1">
+            <div class = "title">Edit Student</div>
+            <form method="post" action="" id="form">
+                <div class="user-details">
+                    <div class = "input-box">
+                        <span class="details">ID:</span>
+                        <input type="number" class="in" min="1" max="20299999" placeholder="ID" name = "stud_id" id = "id" value="{{ data.stud_id }}" required>
+
+                    </div>
+                    <div class = "input-box">
+                            <span class="details">Name:</span>
+                            <input type="text" class="in" placeholder="Student Name" name = "name" value="{{ data.stud_name }}" required>
+
+                        </div>
+
+
+                        <div class = "input-box">
+                            <span class="details">GPA:</span>
+                            <input type="number" class="in" min="0" step="0.01" max = "4" placeholder="GPA" name = "gpa" value="{{ data.stud_gpa }}" required>
+
+                        </div>
+
+                        <div class = "input-box">
+                            <span class="details">Date of Birth:</span>
+                            <input type="date" class="in" name="date" value="{{ date }}" required>
+
+                        </div>
+
+                        <div class = "input-box">
+                            <span class="details">Email:</span>
+                            <input type="email" class="in" placeholder="Email" name = "email" value="{{ data.email }}" required>
+
+                        </div>
+
+                        <div class = "input-box">
+                            <span class="details">level:</span>
+                            {% if data.level == "1"%}
+                                <select name="level" id="level">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4" >4</option>
+                                </select>
+                            {% elif data.level == "2" %}
+                                <select name="level" id="level">
+                                    <option value="1" >1</option>
+                                    <option value="2" selected>2</option>
+                                    <option value="3">3</option>
+                                    <option value="4" >4</option>
+                                </select>
+                            {% elif data.level == "3" %}
+                                <select name="level" id="level">
+                                    <option value="1" >1</option>
+                                    <option value="2" >2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4" >4</option>
+                                </select>
+                            {% else %}
+                                <select name="level" id="level">
+                                    <option value="1" >1</option>
+                                    <option value="2" >2</option>
+                                    <option value="3" >3</option>
+                                    <option value="4" selected>4</option>
+                                </select>
+                            {% endif %}
+                        </div>
+                        <div class = "input-box">
+                            <span class="details" id="depart">Department:</span>
+                            <!-- create a dropdown list of departments -->
+                            {% if dep == "General" %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE" selected>General (no department)</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="DS">Decision Support</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
+                            {% elif dep == "Computer Science" %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE">General (no department)</option>
+                                    <option value="CS" selected>Computer Science</option>
+                                    <option value="DS">Decision Support</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
+                            {% elif dep == "Decision Support" %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE">General (no department)</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="DS" selected>Decision Support</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
+                            {% elif dep == "Information Systems" %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE">General (no department)</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="DS">Decision Support</option>
+                                    <option value="IS" selected>Information Systems</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
+                            {% elif data.department == "Artificial Intelligence" %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE">General (no department)</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="DS">Decision Support</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="AI" selected>Artificial Intelligence</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
+                            {% else %}
+                                <select name="department" id="department" disabled>
+                                    <option value="GE">General (no department)</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="DS">Decision Support</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="IT" selected>Information Technology</option>
+                                </select>
+                            {% endif %}
+
+                        </div>
+                        <div class = "input-box">
+                            <span class="details">Status:</span>
+                            {% if data.sta == true %}
+                            <select class="in" id = "status" >
+                                <option>select</option>
+                                <option value="act" selected>active</option>
+                                <option value="inact">inactive</option>
+                            </select>
+                            {% else %}
+                            <select class="in" id = "status" >
+                                <option>select</option>
+                                <option value="act">active</option>
+                                <option value="inact" selected>inactive</option>
+                            </select>
+                            {% endif %}
+                        </div>
+                        <div class = "input-box">
+                            <span class="details">Mobile Number:</span>
+                            <input type="text" class="in" placeholder="Mobile Number" name = "mobile-number" value="{{ data.mobileNumber }}">
+                        </div>
+<!--                    <div class = "button">-->
+                    <!--                        {% csrf_token %}-->
+                    <!--                    </div>-->
+                </div>
+                <div class="radio">
+                    <span class="details">Gender:</span>
+                    {% if data.gender == "Male" %}
+                    <input id="1" type="radio" name="gender" value="M" checked>
+                    <label for="1" >Male</label>
+                    <input id="2" type="radio" name="gender" value="F">
+                    <label  for="2">Female</label>
+                    {% else %}
+                    <input id="3" type="radio" name="gender" value="M">
+                    <label for="3" >Male</label>
+                    <input id="4" type="radio" name="gender" value="F" checked>
+                    <label  for="4">Female</label>
+                    {% endif%}
+                </div>
+                <div class = "button">
+                    {% csrf_token %}
+                    <button type="reset" class ="btn" onclick="deleteStudent()"><span>Delete</span></button>
+                    <button type="submit" class="btn"><span>edit</span></button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <div id="footer">
+            {% include 'footer.html' %}
+        </div>
+    </footer>
+</html>

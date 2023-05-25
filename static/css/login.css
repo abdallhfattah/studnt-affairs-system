@@ -1,0 +1,170 @@
+/* Login & Register */
+/* ================== Body ================== */
+body{
+    min-height: 10vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(315deg, #aff6cf 0%, #9f98e8 74%);
+}
+
+
+/* ================== Center ================== */
+.center{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    width: 25rem;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 325px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.center {
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+.center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px ;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-bottom: #000;
+    /*#TODO change it */
+    background-color: none;
+    outline: none;
+    border-radius: 40px;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #332727;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+.txt_field span::before{
+    content:'';
+    position: absolute;
+    top: 40px;
+    left:0;
+    width: 0%;
+    height: 2px;
+    background: #000000;
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top : -5px;
+    color: #333;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: #2691d9;
+    cursor:pointer;
+    display: inline-block;
+    padding-left: 40px;
+}
+.pass:hover{
+    text-decoration: underline;
+}
+
+/* ================== Login button ================== */
+
+div input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    border: 3px solid;
+    background: #5dd58b;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.7s;
+}
+
+input[type="submit"]:hover{
+background: #ffffff;
+color: #5dd58b;
+}
+
+.register{
+margin: 30px 0;
+font-size: 16px;
+color: #000;
+text-align: center;
+}
+.register a{
+color: #2691d9;
+text-decoration: none;
+}
+
+.register a:hover{
+text-decoration: underline;
+}
+
+#forget{
+    display: inline-block;
+    text-align: center;
+
+}
+
+/* Success */
+.input-field.success input {
+    border-color: #09c372;
+}
+
+/* Error */
+.input-field.x input {
+    border-color: #ff3860;
+}
+
+.input-field .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+.messages-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.messages li {
+  color: red;
+}

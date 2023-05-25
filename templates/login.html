@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ========== Style sheets ========== -->
+    <link rel="stylesheet" href="{% static 'css/mater.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+
+    <!-- ========== Java Script ========== -->
+    <!-- <script defer src="{% static 'js/login.js' %}"></script> -->
+    <title>login page</title>
+  </head>
+  
+  <!-- ========== Header ========== -->
+  <header>
+    <div id="header">{% include 'header.html' %}</div>
+  </header>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+
+     <!-- login.html -->
+     {% if messages %}
+      <div class="messages-container">
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <!-- Your login form here -->
+      <form action="" method="post">  
+        <!-- TOKEN -->
+        {% csrf_token %}
+        <!-- Form of Login Page -->
+        
+        <div class="txt_field">   
+          <!-- ========== ID ========== -->
+          <input type="text" id="id" name = "username" required />
+          <span></span>
+          <label>username</label>
+          <div class="error"></div>
+        </div>
+
+        <!-- ========== password ========== -->
+        <div class="txt_field">
+          <input type="password" id="password" name = "password" required />
+          <span></span>
+          <label>password</label>
+          <div class="error"></div>
+        </div>
+
+        <!-- ========== forgot password & remeber me box ========== -->
+        <div id="forget">
+          <input type="checkbox" name="remember_me" />
+          <span> remember me </span>
+        </div>
+
+          <!-- ========== Login button ========== -->
+        <div class="register">
+          <input type="submit" value="Login" />
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <!-- ========== footer ========== -->
+  <footer id="footer">{% include 'footer.html' %}</footer>
+</html>

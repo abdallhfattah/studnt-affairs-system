@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Student Affairs Website </title>
+  <meta name="description" content="This our Student Affairs website">
+  <link rel="stylesheet" href="static/css/index.css">
+
+</head>
+<body>
+<header>    
+    <div id="header">
+    <div>
+          <ul>
+            <li style="float: left;padding: 10px;" id="facultyName"><label>F C A I</label></li>
+        </ul>
+    </div>
+    </div>
+</header>
+<div class="content">
+    <div class="slidershow middle">
+        <div class="slides" >
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <div class="slide s1" >
+                <p><a href="{% url 'base:home' %}">Student Affairs System</a></p>
+            </div>
+            <div class="slide" class="s2">
+                <p>Human Resources System</p>
+            </div>
+            <div class="slide" class="s3">
+                <p>Higher studies System</p>
+            </div>
+            <div class="slide" class="s4">
+                <p> Laboratory tracking System</p>
+            </div>
+        </div>
+        <div class="navig">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="footer-basic">
+
+    <footer>
+        <ul class="list-inline">
+        <li style="float: left;; "><img src = "static/logos/facultyLogo.webp" id="universityLogo"></li>
+    <li style="float: left; "><img src = "static/logos/universityLogo.webp"  id="facultyLogo"></li>
+        </ul>
+        <p class="copyright">Copyright © 2022-2023 Faculty of Computers and Artificial Intelligence 5 Dr. Ahmed Zewail Street, Postal Code: 12613, Orman, Giza, Egypt.</p>
+    </footer>
+</div>
+</body>
+
+
+</html>

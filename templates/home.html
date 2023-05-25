@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Student Affairs Website </title>
+      <meta name="description" content="This our Student Affairs website">
+      <link rel="stylesheet" href="{% static 'css/mater.css' %}">
+</head>
+<header>
+  <div id="header">
+      {% include 'header.html' %}
+  </div>
+</header>
+<body>
+
+  <div class="content">
+  <h1>
+WELCOME <br>
+STUDENTS AFFAIRS SYESTEM</h1>
+<h2>FACULTY OF COMPUTERS AND ARTIFICIAL INTELLIGENCE</h2>
+</div>
+</body>
+
+<footer>
+  <dev id="footer">
+      {% include 'footer.html' %}
+
+  </dev>
+
+</footer>
+
+</html>

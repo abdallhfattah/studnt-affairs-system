@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/searchUI.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mater.css'%}">
+    <title>Search for a Student Page</title>
+     <script defer src="{% static 'js/search.js' %}"></script>
+
+  </head>
+  <header>
+    <div id="header">
+      {% include 'header.html' %}
+    </div>
+  </header>
+  <body>
+      <h1 id="top-text">Search for Student</h1>
+      <div class="back">
+        <div class="search">
+          <input type="text" onkeyup="mysearchfun()" id="myinput" placeholder="Search by name.." name="search">
+        </div>
+<div class="table_con">
+    <table id="mytable">
+
+        <thead>
+
+            <th class="ID">ID</th>
+            <th class="Name">Name</th>
+            <th class="GPA">GPA</th>
+            <th class="Level">Level</th>
+            <th class="Department">Department</th>
+            <th class="Date Of Birth">Date Of Birth</th>
+            <th class="Gender">Gender</th>
+            <th class="Email">Email</th>
+            <th class="Mobile Number">Mobile Number</th>
+
+        </thead>
+
+        <tbody>
+
+             {% for student in students %}
+             {% if student.status%}
+                <tr class="active-row">
+                    <td class = "ID">{{student.stud_id}}</td>
+                    <td class = "Name">{{student.stud_name}}</td>
+                    <td class = "GPA">{{student.stud_gpa}}</td>
+                    <td class = "Level">{{student.level}}</td>
+                    <td class = "Department">{{student.department}}</td>
+                    <td class = "Date Of Birth">{{student.dateOfBirth}}</td>
+                    <td class="Gender">
+                        {% if student.gender == "Male" %}
+                            Male
+                        {% else %}
+                            Female
+                        {% endif %}
+                    </td>
+                   <td class = "Email">{{student.email}}</td>
+                   <td class = "Mobile Number">{{student.mobileNumber}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+
+        </tbody>
+
+
+
+    </table>
+  </div>
+    <div class ="buttons">
+
+        <button class="buttonedit" onclick="editOrDelete()">
+          EDIT/DELETE
+        </button>
+
+        <button class="buttonedit" onclick="selectDepartment()">
+          Select Department
+        </button>
+
+    </div>
+  </div>
+    </body>
+  <footer id="footer">
+    {% include 'footer.html'%}
+  </footer>
+
+</html>

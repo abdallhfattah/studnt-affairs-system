@@ -1,0 +1,16 @@
+{% load static %}
+<div class="footer-basic">
+         <footer>
+             <ul class="list-inline">
+                 <li style="float: left;; "><img src = "{% static 'logos/universityLogo.webp' %}" id="universityLogo"></li>
+                 <li style="float: left; "><img src = "{% static 'logos/facultyLogo.webp' %}" id="facultyLogo"></li>
+                 {% if request.user.is_authenticated %}
+                 <li class="list-inline-item"><a href="{% url 'base:home'%}">Home</a></li>
+                 <li class="list-inline-item"><a href="{% url 'base:show'%}">Show all students</a></li>
+                 <li class="list-inline-item"><a href="{% url 'base:search'%}">search/edit</a></li>
+                 <li class="list-inline-item"><a href="{% url 'base:about'%}">About</a></li>
+                 {% endif %}
+             </ul>
+             <p class="copyright">Copyright © 2022-2023 Faculty of Computers and Artificial Intelligence 5 Dr. Ahmed Zewail Street, Postal Code: 12613, Orman, Giza, Egypt.</p>
+         </footer>
+</div>

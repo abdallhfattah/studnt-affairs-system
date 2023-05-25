@@ -1,0 +1,407 @@
+h1{
+  text-align: center;
+  color: white;
+}
+
+body{
+  background-image: linear-gradient(315deg, #aff6cf 0%, #9f98e8 74%);
+  /* padding-bottom: 282; */
+
+}
+#top-text{
+padding: 50px 40px;
+}
+
+.back{
+  text-align: center;
+  background-color: white;
+  padding: 100px 40px;
+  border-radius: 10px;
+  margin: 3%;
+  margin-bottom: 10%;
+  position: relative;
+
+}
+#check-box {
+  display: flex;
+  background-color: #FFF;
+  align-self: center;
+  height: auto ;
+  border-radius: 10px;
+  align-content: center;
+   padding: 10px 40px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 50px;
+  
+  
+}
+#check-box input[type="checkbox"] {
+    /* Hide the default checkbox appearance */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Set the size of the checkbox */
+    width: 16px;
+    height: 16px;
+    /* Add custom styles for the checkbox */
+    background-color: #e5e5e5; /* Unchecked background color */
+    border-radius: 3px;
+    border: 1px solid #999999; /* Unchecked border color */
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+
+  /* Custom styles for the checked checkbox */
+  #check-box input[type="checkbox"]:checked {
+    background-color: #4681f4; /* Checked background color */
+    border: 1px solid #4681f4; /* Checked border color */
+  }
+
+  /* Custom styles for the checkbox label */
+  #check-box label {
+    margin-left: 5px; /* Add some spacing between checkbox and label */
+  }
+
+table{
+  width: 100%;
+  background-color: white;
+  text-align: center;
+
+  
+}
+th,td{
+
+border: 1px solid #ddd;
+  padding: 20px;
+  height: 50px;
+  border-radius: 10px;
+} 
+
+tr:hover{
+
+  background-color: #bdcec6;
+  animation: mymove 5s infinite;
+  
+}
+@keyframes mymove {
+  from {background-color: #b0f0d8;}
+  to {background-color: #62c09d;}
+}
+
+th {
+  background-color: #10a26d;
+  color: white;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  
+  
+}
+.table_con{
+  height: 300px;
+  overflow: scroll;
+}
+.hidden{
+  display: none;
+}
+.active{
+  background: #56c080;
+  left: 30px;
+}
+
+input[type=text]{
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid gray;
+  float: center;
+  width: 25%;
+  background: #e3e3e3;
+  border-radius: 15px;
+
+}
+
+.buttons{
+  padding: 20px 0px 0px 0px;
+}
+
+button{
+  padding: 10px 24px;
+  border:1px solid #5dd58b;
+  float: center;
+  width: 12%;
+  background: #56c080;
+  border-radius: 15px;
+ color: white;
+ transition-duration: 0.4s;
+}
+button:hover{
+
+  background-color: white;
+  color: #5dd58b;
+}
+toggle{
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+
+/* .toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+} */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+ *, *::before, *::after {
+	 box-sizing: border-box;
+}
+
+ *:not(:empty) {
+	 transform-style: preserve-3d;
+}
+ .checkboxes {
+	 width: 100%;
+	 max-width: 180px;
+}
+ .flipBox {
+	 position: relative;
+	 display: block;
+	 text-align: left;
+	 margin: 1em auto;
+	 cursor: pointer;
+}
+ .flipBox:active > .flipBox_boxOuter {
+	 height: 25%;
+}
+ .flipBox span {
+	 padding-left: 1.25em;
+}
+ .flipBox > input {
+	 appearance: none;
+	 position: fixed;
+	 left: -100vmax;
+	 top: -100vmax;
+}
+ .flipBox > input:checked ~ .flipBox_boxOuter {
+	 animation: flipBox1 1s forwards linear;
+}
+ .flipBox > input:checked ~ .flipBox_boxOuter .flipBox_box {
+	 animation: flipBox2 1s forwards ease-in-out;
+}
+ .flipBox > input:checked ~ .flipBox_shadow {
+	 animation: flipBox3 1s forwards ease-in-out;
+}
+ .flipBox > input:not(:checked) ~ .flipBox_boxOuter {
+	 animation: flipBox4 1s forwards linear;
+}
+ .flipBox > input:not(:checked) ~ .flipBox_boxOuter .flipBox_box {
+	 animation: flipBox5 1s forwards ease-in-out;
+}
+ .flipBox > input:not(:checked) ~ .flipBox_shadow {
+	 animation: flipBox6 1s forwards ease-in-out;
+}
+ .flipBox > input:disabled ~ * {
+	 cursor: not-allowed;
+}
+ .flipBox > input:disabled ~ .flipBox_boxOuter {
+	 height: 0%;
+}
+ .flipBox > input:disabled ~ .flipBox_boxOuter .flipBox_box > div:nth-child(6) {
+	 background-color: #ccc;
+}
+ .flipBox > input:disabled ~ .flipBox_boxOuter .flipBox_box > div:nth-child(-n + 5), .flipBox > input:disabled ~ .flipBox_boxOuter ~ .flipBox_shadow {
+	 display: none;
+}
+ .flipBox > input:focus-visible ~ span {
+	 outline: 1px #000 solid;
+	 outline-offset: 0.25em;
+}
+ .flipBox_boxOuter {
+	 position: absolute;
+	 left: 0;
+	 top: 50%;
+	 width: 1em;
+	 height: 1em;
+	 transform-origin: top;
+	 transition: height 0.25s;
+}
+ .flipBox_box {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 width: 1em;
+	 height: 100%;
+	 transform: translate(-50%, -50%);
+}
+ .flipBox_box > div {
+	 position: absolute;
+	 width: 1em;
+	 box-shadow: 0 0 0.25em #000 7 inset;
+}
+ .flipBox_box > div:nth-child(1) {
+	 background-image: linear-gradient(green, white);
+	 transform: rotateY(0deg) translateX(50%) rotateY(90deg);
+	 height: 100%;
+}
+ .flipBox_box > div:nth-child(2) {
+	 background-image: linear-gradient(green, white);
+	 transform: rotateY(90deg) translateX(50%) rotateY(90deg);
+	 height: 100%;
+}
+ .flipBox_box > div:nth-child(3) {
+	 background-image: linear-gradient(green, white);
+	 transform: rotateY(180deg) translateX(50%) rotateY(90deg);
+	 height: 100%;
+}
+ .flipBox_box > div:nth-child(4) {
+	 background-image: linear-gradient(green, white);
+	 transform: rotateY(270deg) translateX(50%) rotateY(90deg);
+	 height: 100%;
+}
+ .flipBox_box > div:nth-child(5) {
+	 background-color: green;
+	 transform: rotateX(90deg) translateY(-0.5em);
+	 transform-origin: top;
+	 height: 1em;
+}
+ .flipBox_box > div:nth-child(5)::after {
+	 content: '';
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background-color: white;
+	 clip-path: polygon(12.5% 56.25%, 25% 43.75%, 37.5% 56.25%, 75% 18.75%, 87.5% 31.25%, 37.5% 81.25%, 12.5% 56.25%);
+}
+ .flipBox_box > div:nth-child(6) {
+	 bottom: 0;
+	 background-color: green;
+	 transform: rotateX(90deg) translateY(0.5em);
+	 transform-origin: bottom;
+	 height: 1em;
+       /*clip-path: polygon(25% 25%, 75% 75%, 75% 25%, 25% 75%);*/
+
+}
+ .flipBox_shadow {
+	 position: absolute;
+	 left: 0;
+	 top: 50%;
+	 width: 1em;
+	 height: 1em;
+	 transform: translateY(-50%) translateZ(-1px);
+	 background-color: #000 7;
+	 filter: blur(0.2em);
+}
+ @keyframes flipBox1 {
+	 0%, 100% {
+		 transform: rotateX(90deg);
+		 animation-timing-function: ease-out;
+	}
+	 50% {
+		 transform: rotateX(90deg) translateY(2em);
+		 animation-timing-function: ease-in;
+	}
+}
+ @keyframes flipBox2 {
+	 from {
+		 transform: translate(-50%, -50%) rotateX(0deg) rotateY(180deg);
+	}
+	 to {
+		 transform: translate(-50%, -50%) rotateX(-180deg) rotateY(0deg);
+	}
+}
+ @keyframes flipBox3 {
+	 0%, 100% {
+		 transform: translateY(-50%) translateZ(-1px) scale(1);
+		 animation-timing-function: ease-out;
+	}
+	 50% {
+		 transform: translateY(-50%) translateZ(-1px) scale(1.5);
+		 animation-timing-function: ease-in;
+	}
+}
+ @keyframes flipBox4 {
+	 0%, 100% {
+		 transform: rotateX(90deg);
+		 animation-timing-function: ease-out;
+	}
+	 50% {
+		 transform: rotateX(90deg) translateY(2em);
+		 animation-timing-function: ease-in;
+	}
+}
+ @keyframes flipBox5 {
+	 from {
+		 transform: translate(-50%, -50%) rotateX(-180deg) rotateY(0deg);
+	}
+	 to {
+		 transform: translate(-50%, -50%) rotateX(-360deg) rotateY(180deg);
+	}
+}
+ @keyframes flipBox6 {
+	 0%, 100% {
+		 transform: translateY(-50%) translateZ(-1px) scale(1);
+		 animation-timing-function: ease-out;
+	}
+	 50% {
+		 transform: translateY(-50%) translateZ(-1px) scale(1.5);
+		 animation-timing-function: ease-in;
+	}
+}
+ @media (prefers-reduced-motion) {
+	 .flipBox_boxOuter, .flipBox_box, .flipBox_shadow {
+		 animation-play-state: paused !important;
+	}
+	 .flipBox_boxOuter {
+		 transition: none;
+	}
+}
+
+
+ 

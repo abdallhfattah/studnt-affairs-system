@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/mater.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>about section</title>
+  </head>
+
+    </head>
+    <body>
+      <header id ="header">
+          {% include 'header.html' %}
+      </header>
+
+    <div class="box">
+    <div class="about-section">
+      <h1>About Student Affairs System</h1>
+	<p>The Student Affairs System is a web-based application designed to manage student records. It provides various functionalities to add, update, delete, search, and view student records in a user-friendly interface.</p>
+
+	<h2>Features</h2>
+		<p>Add a new student to the system</p>
+		<p>Update an existing student information (except department field should be shown disabled for editing)</p>
+		<p>Delete an existing student data through a delete button in edit student data page with a confirmation dialogue for the action before deletion occurs</p>
+		<p>Search for “active” students by name in search for students screen and students with similar names having active status should be rendered as a table</p>
+		<p>Select a specific student after searching to assign a department through the student’s department assignment page. The page should include student ID, name and a dropdown list for available departments and a submit button. This action is applicable for students if level = 3 else an error should be shown to the user with a clear understandable error message</p>
+		<p>View all active/inactive students in a separate page rendered in a table with a related set of attributes only</p>
+		<p>Change the status of student from active to inactive or vice versa from the table viewing all students</p>
+		<p>A well-designed navigation bar to go through all pages and a home page</p>
+
+	<h2>Technologies Used</h2>
+		<p>HTML</p>
+		<p>CSS</p>
+		<p>JavaScript</p>
+        <p>Django</p>
+
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+<section class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="our-team">
+        <div class="pic">
+          <img src="{% static 'logos/seif_img.jpg' %}">
+        </div>
+        <h3 class="title">Seif eldin</h3>
+        <span class="post">Developer</span>
+        <ul class="social">
+          <li><a href="https://www.facebook.com/profile.php?id=100008623188678" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="https://www.linkedin.com/in/seif-mahmoud-48741b240/" class="fa fa-linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6" style="margin-left: 10%;">
+      <div class="our-team">
+        <div class="pic">
+          <img src="{% static 'logos/adhamimg.jpg' %}">
+        </div>
+        <h3 class="title">Adham Adel</h3>
+        <span class="post">Developer</span>
+        <ul class="social">
+          <li><a href="https://www.facebook.com/adham.adel.547?mibextid=ZbWKwL" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="https://www.linkedin.com/in/adham-adel-a10b73232" class="fa fa-linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6" style="margin-left: 10%;">
+      <div class="our-team">
+        <div class="pic">
+          <img src="{% static 'logos/abdallahimg.jpg' %}">
+        </div>
+        <h3 class="title">Abdallah mohamed</h3>
+        <span class="post">Developer</span>
+        <ul class="social">
+          <li><a href="#" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6" style="margin-left: 20%;padding-top: 5%">
+      <div class="our-team">
+        <div class="pic">
+          <img src="{% static 'logos/Tony img.jpg' %}">
+        </div>
+        <h3 class="title">Antonious Amgad</h3>
+        <span class="post">Developer</span>
+        <ul class="social">
+          <li><a href="https://www.facebook.com/tony.amgadreyad?mibextid=LQQJ4d" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="https://www.linkedin.com/in/antonious-amgad-b51bb8252" class="fa fa-linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6" style="margin-left: 10%; padding-top: 5%">
+      <div class="our-team">
+        <div class="pic">
+          <img src="{% static 'logos/contact.jpg' %}">
+        </div>
+        <h3 class="title">Yasmen Amr</h3>
+        <span class="post">Developer</span>
+        <ul class="social">
+          <li><a href="https://www.facebook.com/yasmen.amr.125?mibextid=ZbWKwL" class="fa fa-facebook"></a></li>
+          <li><a href="https://twitter.com/YasmenAmr17?t=HuzWLHtr_YAUW0UaRw5c3Q&s=09" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+    <dev id="footer">
+      {% include 'footer.html' %}
+  </dev>
+    </body>
+</html>

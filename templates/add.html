@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+	<link rel="stylesheet" href="{% static 'css/mater.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<!----======== SCRIPT ======== -->
+	<script type="module"  defer src="{% static 'js/validation.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Regisration Form</title> 
+</head>
+<header>
+	<div id="header">
+        {% include 'header.html' %}
+    </div>
+</header>
+<body>
+    <div class="container">
+        <header>Add Student</header>
+
+        <form id="form" action="/base/check_existing/" method="POST" >
+            {% csrf_token %}
+            <!-- =========== Personal Details =========== -->
+            <div class="form-first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+                    <!-- =========== FULL NAME =========== -->
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" id="name" name="stud_name" placeholder="Enter your name" required>
+                            <div class="error"></div>
+                        </div>
+
+                    <!-- =========== Birth Day =========== -->
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" id="date" name="date_of_birth" placeholder="Enter birth date" required>
+                            <div class="error"></div>
+                        </div>
+
+                    <!-- =========== Email =========== -->
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                            <div class="error"></div>
+                        </div>
+
+                    <!-- =========== Mobile Number =========== -->
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="tel" id="phone" name="mobile_number" placeholder="Enter mobile number" required>
+                            <div class="error"></div>
+                        </div>
+                        
+                    <!-- =========== Status =========== -->
+						<div class="input-field">
+							<label>Status</label>
+							<select required  id="status" name="status">
+                                <option disabled selected>Select status</option>
+                                <option value ="act">Active</option>
+                                <option value ="inact">Inactive</option>
+                            </select>
+                            <div class="error"></div>
+                        </div>
+                    <!-- =========== Gender =========== -->
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <select required  id="gender" name="gender">
+                                <option disabled selected >Select gender</option>
+                                <option value = "Male">Male</option>
+                                <option value = "Female">Female</option>
+                            </select>
+                            <div class="error"></div>
+                        </div>	
+                    </div>
+                </div>
+                    <!-- =========== Faculty Details =========== -->
+                    <div class="details ID">
+                        <span class="title">Faculty Details</span>
+                        <div class="fields">
+                    <!-- =========== ID =========== -->
+                            <div class="input-field">
+                                <label>ID</label>
+                                <input id="id" type="text" placeholder="Enter ID type" name="stud_id" required>
+                                <div class="error"></div>
+                            </div>
+
+                    <!-- =========== Department =========== -->
+                            <div class="input-field">
+                                <label>Department</label>
+                                <select required id="department" name="department">
+                                    <option disabled selected vlaue="">Select Department</option>
+                                    <option value = "None">Not Yet</option>
+                                    <option value = "IS">Information Systems</option>
+                                    <option value = "CS">Computer Science</option>
+                                    <option value = "AI">Artificial Intelligence</option>
+                                    <option value = "IT">Information Technology</option>
+                                    <option value = "DS">Data Science</option>
+                                </select>
+                                <div class="error"></div>
+                            </div>
+
+                    <!-- =========== GPA =========== -->
+                            <div class="input-field">
+                                <label>GPA</label>
+                                <input type="number" id="gpa" min = "0.01" max ="4" step ="0.01" name="stud_gpa" placeholder="Enter GPA" required>
+                                <div class="error"></div>
+                            </div>
+
+                    <!-- =========== Level =========== -->
+                            <div class="input-field">
+                                <label>Level</label>
+                                <select id="level" required name="level">
+                                    <option disabled selected>Select Level</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <div class="error"></div>
+                            </div>
+                        
+                    <!-- =========== Password =========== -->
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" id="pass" name="password" placeholder="Enter your Password" required>
+                                <div class="error"></div>
+                            </div>
+
+                    <!-- =========== Confirm Password =========== -->
+                            <div class="input-field">
+                                <label>Confirm Password</label>
+                                <input id="confirm-pass" type="password" name="confirm-pass" placeholder="Confirm password" required>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                    <!-- =========== submit =========== -->
+                        <div class = "add-button">
+                        <button type="submit"  class="btnText">
+                            Add
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>	
+    </body>
+<footer id="footer">
+    {% include 'footer.html' %}
+</foote>	
+</html>
+

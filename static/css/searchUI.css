@@ -1,0 +1,106 @@
+h1{
+    text-align: center;
+    color: white;
+}
+
+body{
+    background-image: linear-gradient(315deg, #aff6cf 0%, #9f98e8 74%);
+
+}
+#top-text{
+padding: 50px 40px;
+
+}
+
+#header{
+    position: sticky;
+    top: 0;
+}
+.back{
+    text-align: center;
+    background-color: white;
+    padding: 100px 40px;
+    border-radius: 10px;
+    margin: 5% 3%;
+}
+
+table{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+th,td{
+
+border: 1px solid #ddd;
+    padding: 20px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+tr:hover{
+
+    background-color: #bdcec6;
+    animation: mymove 2s forwards;
+    
+}
+@keyframes mymove {
+    from {background-color: #c5c5c5;}
+    to {background-color: #4cdaaf;}
+}
+
+th {
+    background-color: #10a26d;
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    
+    
+  }
+  .table_con{
+    height: 300px;
+    overflow: scroll;
+  }
+
+  .search{
+    padding: 0 0 25px 0;
+
+  }
+  input[type=text]{
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid gray;
+    float: center;
+    width: 25%;
+    background: #e3e3e3;
+    border-radius: 18px;
+      -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+  }
+  input[type=text]:focus{
+      width: 40%;
+  }
+
+.buttons{
+    padding: 80px 0 0 0;
+}
+
+button{
+    padding: 10px 20px;
+    border:2px solid #5dd58b;
+    float: center;
+    width: 12%;
+    background: #5dd58b;
+     border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+   color: white;
+   transition-duration: 0.4s;
+}
+button:hover{
+
+    background-color: white;
+    color: #5dd58b;
+}
