@@ -153,6 +153,7 @@ form .fields .input-field{
     position: absolute;
     top : 31rem;
     left: 19rem;
+    transform: translate(0%,-50%);
     align-items: center;
     justify-content: center;
     height: 45px;
