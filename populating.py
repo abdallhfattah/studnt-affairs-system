@@ -17,9 +17,10 @@ from faker import Faker
 fakegen = Faker()
 
 departments = ['IS', 'CS', 'IT', 'AI', 'None', 'DS']
-
+dep = "None"
 def add_department():
-    department = Department.objects.get_or_create(name=random.choice(departments))
+    dep = random.choice(departments)
+    department = Department.objects.get_or_create(name=dep)
     return department[0]
 
 # adding random generated student attributes
@@ -32,12 +33,13 @@ def populate(N=5):
         fake_date_of_birth = fakegen.date_of_birth(minimum_age=18, maximum_age=30)
         fake_gender = random.choice(['Male', 'Female'])
         fake_status = random.choice([True, False])
-        fake_level = random.choice(['1', '2' , '3', '4'])
         fake_email = fakegen.email()
         fake_mobile_number = fakegen.phone_number()
-        
+        fake_level = random.choice(['3', '4'])
         # Get the department for the entry
         department = add_department()
+        if dep == "None":
+            fake_level = random.choice(['1', '2'])
 
         # Create the new student entry
         student = Student.objects.get_or_create(
