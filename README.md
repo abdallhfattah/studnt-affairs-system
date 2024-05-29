@@ -24,10 +24,14 @@ This Django project is a Student Management System (SMS) designed to efficiently
 - Whitenoise (for serving static files efficiently): `pip install whitenoise`
 
 ## Screenshots
+- ![Login](screenshots/login.png)
 - ![Add Student](screenshots/add.png)
+- ![Validation](screenshots/validation.png)
 - ![Delete Student](screenshots/delete.png)
 - ![Edit Student](screenshots/edit.png)
-- ![Login](screenshots/login.png)
 - ![Search](screenshots/search.png)
 - ![Show Students](screenshots/show.png)
-- ![Validation](screenshots/validation.png)
+
+
+## note
+sadly the main repo had issue with the commits so i had to create a new one
