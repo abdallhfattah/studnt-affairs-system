@@ -32,6 +32,8 @@ This Django project is a Student Management System (SMS) designed to efficiently
 - ![Search](screenshots/search.png)
 - ![Show Students](screenshots/show.png)
 
+## Populate Script
+The `populate.py` script is responsible for creating fake student data and injecting it into the database. It generates random student attributes such as ID, name, GPA, date of birth, gender, email, etc., and assigns them to random departments. This script is useful for populating the database with test data for development and testing purposes.
 
 ## note
 sadly the main repo had issue with the commits so i had to create a new one
